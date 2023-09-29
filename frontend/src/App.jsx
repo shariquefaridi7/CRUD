@@ -1,9 +1,11 @@
 import Form from "./component/form";
 
+
 const App=()=>{
 return(
   <>
   <Form/>
+  
   </>
 )
 

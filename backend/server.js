@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import router from './routes/dataRoute.js';
-import { sequelize } from './config/dbconfig.js';
+import { sequelize } from './util/dbconfig.js';
+import delRouter from "./routes/delDataRoute.js"
 
 
 const app=express();
@@ -15,6 +16,7 @@ app.use(cors());
 // routes
 
 app.use("/",router);
+app.use("/delPart",delRouter);
 
 //connect db
 sequelize.sync().then(()=>console.log("db connect")).catch((err)=>console.log(err));
