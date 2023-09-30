@@ -1,5 +1,5 @@
-import { Info } from "../model/libraryModel.js";
-import { delPart } from "../model/bodyModel.js";
+import { Info } from "../models/bookModel.js";
+import { delPart } from "../models/returnBookModel.js";
 
 export const post=async(req,res)=>{
    const {name}=req.body;

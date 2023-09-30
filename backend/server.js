@@ -1,8 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-import router from './routes/dataRoute.js';
+import router from './routes/bookRoute.js';
 import { sequelize } from './util/dbconfig.js';
-import delRouter from "./routes/delDataRoute.js"
+import delRouter from "./routes/returnBookRoute.js"
+import paymentRouter from "./routes/paymentRoute.js"
 
 
 const app=express();
@@ -16,7 +17,8 @@ app.use(cors());
 // routes
 
 app.use("/",router);
-app.use("/delPart",delRouter);
+app.use("/",delRouter);
+app.use("/payment",paymentRouter);
 
 //connect db
 sequelize.sync().then(()=>console.log("db connect")).catch((err)=>console.log(err));
